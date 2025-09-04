@@ -1,0 +1,87 @@
+.width30{
+    width:30%;
+}
+
+.float_right{
+    float:  right !important;
+}
+.custom_img{
+    width:150px;
+    height: 150px;
+}
+.card_title_center{
+    width: 100%;
+    text-align: center !important;
+}
+.custom_thead{
+    background-color: #233490;
+    color: #fff;
+}
+table .btn{ margin-top: 2px;}
+.custom_form{
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    padding: 10px;
+    background-color:white;
+    margin-bottom: 7px;
+}
+h4.modal-title {
+    text-align: center;
+    width: 100%;
+}
+
+.modal {
+
+    overflow: scroll;
+
+}
+.customh3{
+    font-size: 18px; text-align: center;color: brown
+}
+
+a.btn.btn-sm.btn-danger {
+    color: white;
+}
+
+.card{
+    width: 100% !important;
+}
+
+.alert.alert-success.text-right {
+    width: 100%;
+    text-align: right !important;
+}
+
+.alert.alert-danger.text-right {
+    width: 100%;
+    text-align: right !important;
+}
+
+a.btn.btn-sm.btn-success {
+    color: white;
+}
+
+a.btn.btn-sm.btn-warning {
+    color: white;
+}
+
+div#show_year_monthesModalBody {
+    background-color: white;
+    color: black;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
