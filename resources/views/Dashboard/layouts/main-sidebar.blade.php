@@ -223,9 +223,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('MainSalaryEmployeeAllowances.index') }}" class="nav-link {{ request()->is('employees*') ? 'active' : '' }}">
+                            <a href="{{ route('MainSalaryEmployeeLoans.index') }}"
+                               class="nav-link {{ request()->is('employees*') ? 'active' : '' }}">
                                 <i class="fa-solid fa-users-gear text-white"></i>
-                                <p class="text-white">البدلات  المالية </p>
+                                <p class="text-white">السلف الشهرية </p>
                             </a>
                         </li>
 

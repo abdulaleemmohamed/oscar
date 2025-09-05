@@ -10,21 +10,20 @@ use App\Http\Controllers\governoratescontroller;
 use App\Http\Controllers\JobCategoryController;
 use App\Http\Controllers\nationalitiescontroller;
 use App\Http\Controllers\OccasionController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QualificationController;
 use App\Http\Controllers\religionscontroller;
 use App\Http\Controllers\ResignationController;
+use App\Http\Controllers\Salary\EmployeePenaltieController;
 use App\Http\Controllers\Salary\MainSalaryEmployeeAbsenceController;
 use App\Http\Controllers\Salary\MainSalaryEmployeeAddtionController;
 use App\Http\Controllers\salary\MainSalaryEmployeeAllowancesController;
 use App\Http\Controllers\salary\MainSalaryEmployeeDiscountController;
 use App\Http\Controllers\salary\MainSalaryEmployeeRewardsController;
+use App\Http\Controllers\salary\MainsalaryofemployeeloanController;
+use App\Http\Controllers\Salary\MainSaleryRecoerd;
 use App\Http\Controllers\SalaryAllowancesController;
 use App\Http\Controllers\SalaryDeductionController;
-use App\Http\Controllers\Salary\EmployeePenaltieController;
-use App\Http\Controllers\Salary\MainSaleryRecoerd;
 use App\Http\Controllers\WorkShiftController;
-use App\Models\MainSalaryEmployeeAbsence;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -159,12 +158,12 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('MainSalaryEmployeeAllowances/print/{periodId}', [MainSalaryEmployeeAllowancesController::class, 'print'] )->name('MainSalaryEmployeeAllowances.print');
     /*----------------- end_MainSalaryEmployeeAllowances---------------------*/
     /*----------------- start_MainSalaryEmployeeLoans---------------------*/
-    Route::resource('MainSalaryEmployeeAllowances',MainSalaryEmployeeAllowancesController::class);
-    Route::get('MainSalaryEmployeeAllowances/show_month/{id}',[MainSalaryEmployeeAllowancesController::class,'show_months'])->name('MainSalaryEmployeeAllowances.show_month');
-    Route::post('/get-salary', [MainSalaryEmployeeAllowancesController::class, 'getSalary'])->name('get.salary');
-    Route::post('/check_exit', [MainSalaryEmployeeAllowancesController::class, 'check_exit'])->name('check_exit');
-    Route::post('/MainSalaryEmployeeAllowances/update', [MainSalaryEmployeeAllowancesController::class, 'update'])->name('MainSalaryEmployeeAllowances.update');
-    Route::get('MainSalaryEmployeeAllowances/print/{periodId}', [MainSalaryEmployeeAllowancesController::class, 'print'] )->name('MainSalaryEmployeeAllowances.print');
+    Route::resource('MainSalaryEmployeeLoans', MainsalaryofemployeeloanController::class);
+    Route::get('MainSalaryEmployeeLoans/show_month/{id}', [MainsalaryofemployeeloanController::class, 'show_months'])->name('MainSalaryEmployeeLoans.show_month');
+    Route::post('/get-salary', [MainsalaryofemployeeloanController::class, 'getSalary'])->name('get.salary');
+    Route::post('/check_exit', [MainsalaryofemployeeloanController::class, 'check_exit'])->name('check_exit');
+    Route::post('/MainSalaryEmployeeLoans/update', [MainsalaryofemployeeloanController::class, 'update'])->name('MainSalaryEmployeeLoans.update');
+    Route::get('MainSalaryEmployeeLoans/print/{periodId}', [MainsalaryofemployeeloanController::class, 'print'])->name('MainSalaryEmployeeLoans.print');
 });
 
 require __DIR__ . '/auth.php';
